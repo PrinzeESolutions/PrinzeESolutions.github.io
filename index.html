@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PrinzeE Solutions</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+.dark { background:#020617; color:white; }
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+a {
+  transition: 0.2s;
+}
+
+a:hover {
+  opacity: 0.7;
+  transform: translateX(3px);
+}
+</style>
+</head>
+
+<body id="body" class="bg-white text-gray-900 transition-all duration-300">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b dark:bg-slate-950/80">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+
+    <div onclick="go('home')" class="cursor-pointer">
+      <h1 class="font-bold text-xl">PrinzeE Solutions</h1>
+      <p class="text-xs text-gray-500">IT Consultancy • Web • Apps • Ads • Security</p>
+    </div>
+
+    <div class="flex gap-2 items-center">
+      <button onclick="go('home')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:scale-105 transition">Home</button>
+      <button onclick="go('services')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:scale-105 transition">Services</button>
+      <button onclick="go('apps')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:scale-105 transition">Apps</button>
+
+      <button onclick="toggleDark()" class="w-14 h-8 bg-gray-300 rounded-full p-1 flex items-center">
+        <div id="dot" class="w-6 h-6 bg-white rounded-full shadow transition-all"></div>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- CONTENT -->
+<div id="app" class="max-w-6xl mx-auto px-6 py-12"></div>
+
+<!-- FOOTER -->
+<footer class="bg-black text-white mt-20">
+  <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+
+    <!-- COMPANY -->
+    <div>
+      <h2 class="text-xl font-bold">PrinzeE Solutions</h2>
+      <p class="text-gray-400 text-sm mt-2">
+        IT Consultancy & Digital Services Company offering web, apps, ads, CCTV, networking and software solutions.
+      </p>
+    </div>
+
+    <!-- APPS -->
+    <div>
+      <h3 class="font-bold mb-2">Our Apps</h3>
+      <ul class="text-sm text-gray-400 space-y-1">
+        <li>Jelly Kingdom</li>
+        <li>Velvet Slice</li>
+        <li>Bubble Shot</li>
+        <li>Jewel Kingdom</li>
+        <li>Ludo Rise</li>
+        <li>DocScanner AI</li>
+      </ul>
+    </div>
+
+    <!-- LINKS -->
+    <div class="text-sm text-gray-400 space-y-2">
+      <p class="text-white font-semibold">Company</p>
+
+      <a href="https://www.youtube.com/@PrrinzeESolutions" target="_blank">YouTube Channel</a><br/>
+      <a href="https://www.instagram.com/prinzeesolutions" target="_blank">Instagram</a><br/>
+      <a href="https://www.facebook.com/prinzeesolutions" target="_blank">Facebook</a><br/>
+      <a href="https://play.google.com/store/apps/dev?id=8790393094937827904" target="_blank">Play Store</a>
+
+      <p class="text-white font-semibold mt-4">Owner</p>
+
+      <a href="https://www.youtube.com/@PrinceChaurasiaVlogs" target="_blank">Owner YouTube</a><br/>
+      <a href="https://www.instagram.com/prinzeegaming/" target="_blank">Owner Instagram</a><br/>
+      <a href="https://www.facebook.com/prinzeegaming" target="_blank">Owner Facebook</a>
+    </div>
+
+  </div>
+
+  <div class="text-center text-xs text-gray-500 py-4 border-t border-gray-800">
+    © 2026 PrinzeE Solutions
+  </div>
+</footer>
+
+<script>
+
+let dark=false;
+let page="home";
+
+const apps=[
+{
+name:"Jelly Kingdom",
+link:"https://play.google.com/store/apps/details?id=com.prinzeesoftware.jellykingdom"
+},
+{
+name:"Velvet Slice",
+link:"https://play.google.com/store/apps/details?id=com.prinzeesoftware.velvetslice"
+},
+{
+name:"Bubble Shot",
+link:"https://play.google.com/store/apps/details?id=com.prinzeesoftware.bubbleshot"
+},
+{
+name:"Jewel Kingdom",
+link:"https://play.google.com/store/apps/details?id=com.prinzeesoftware.jewelkingdom"
+},
+{
+name:"Ludo Rise",
+link:"https://play.google.com/store/apps/details?id=com.prinzeesoftware.ludorise"
+},
+{
+name:"DocScanner AI",
+link:"https://play.google.com/store/apps/details?id=com.prinzeesoftware.docscannerai"
+}
+];
+
+const services=[
+"Website Development",
+"Mobile App Development",
+"Google Ads Management",
+"Digital Marketing",
+"IT Consultancy",
+"CCTV Installation",
+"Networking Solutions",
+"Software Development"
+];
+
+function go(p){
+page=p;
+render();
+}
+
+function toggleDark(){
+dark=!dark;
+document.getElementById("body").classList.toggle("dark");
+document.getElementById("dot").style.transform =
+dark ? "translateX(24px)" : "translateX(0)";
+}
+
+function render(){
+const app=document.getElementById("app");
+
+if(page==="home"){
+app.innerHTML=`
+<div class="text-center py-12 animate-fade">
+<h1 class="text-5xl font-bold">Build. Scale. Grow.</h1>
+<p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+PrinzeE Solutions is a professional IT consultancy delivering websites, apps, Google Ads and security systems.
+</p>
+
+<button onclick="go('services')" class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-xl hover:scale-105 transition">
+Explore Services
+</button>
+</div>`;
+}
+
+if(page==="services"){
+app.innerHTML=`
+<h2 class="text-3xl font-bold mb-6">Services</h2>
+<div class="grid md:grid-cols-3 gap-4">
+${services.map(s=>`
+<div class="card p-5 border rounded-xl">
+<h3 class="font-bold">${s}</h3>
+<p class="text-sm text-gray-500">Professional IT solution</p>
+</div>
+`).join("")}
+</div>`;
+}
+
+if(page==="apps"){
+app.innerHTML=`
+<h2 class="text-3xl font-bold mb-6">Our Apps</h2>
+<div class="grid md:grid-cols-3 gap-4">
+${apps.map(a=>`
+<div class="card p-5 border rounded-xl">
+<h3 class="font-bold">${a.name}</h3>
+<a class="text-blue-600 hover:underline" target="_blank" href="${a.link}">
+Open Play Store
+</a>
+</div>
+`).join("")}
+</div>`;
+}
+}
+
+render();
+
+</script>
+
+</body>
+</html>
