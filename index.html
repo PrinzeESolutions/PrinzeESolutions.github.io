@@ -164,10 +164,10 @@
       <div>
         <h3 class="font-semibold text-xs tracking-wider uppercase text-slate-400 mb-3">Software Products</h3>
         <ul class="text-xs text-slate-400 space-y-2">
+          <li><span class="hover:text-white transition cursor-pointer" onclick="go('apps')">ArrowLine</span></li>
           <li><span class="hover:text-white transition cursor-pointer" onclick="go('apps')">DocScanner AI</span></li>
           <li><span class="hover:text-white transition cursor-pointer" onclick="go('apps')">Ludo Rise</span></li>
           <li><span class="hover:text-white transition cursor-pointer" onclick="go('apps')">Jelly Kingdom</span></li>
-          <li><span class="hover:text-white transition cursor-pointer" onclick="go('apps')">Velvet Slice</span></li>
         </ul>
       </div>
 
@@ -203,7 +203,6 @@
     let darkModeActive = false;
     let pageRoute = "home";
 
-    // Cleaned up clear and professional services description list
     const systemServices = [
       { id: "web_dev", name: "Website Development", category: "Web Tech", desc: "Custom development using responsive frameworks like React, Tailwind, and cutting-edge web stacks tailored for business requirements." },
       { id: "app_dev", name: "Mobile App Development", category: "Mobile Systems", desc: "High-performance native and cross-platform apps published on Google Play and Apple App Stores with seamless user experiences." },
@@ -216,8 +215,8 @@
       { id: "soft_dev", name: "Software Development", category: "Web Tech", desc: "Bespoke internal dashboards, business process automation tools, database designs, and custom backend utilities." }
     ];
 
-    // Clean, authentic listing of published operational store apps
     const activeApps = [
+      { name: "ArrowLine", category: "Arcade Skill Game", desc: "An engaging arcade-style precision game testing timing and reflex accuracy with smooth controls and minimal interfaces.", link: "https://play.google.com/store/apps/details?id=com.prinzeesolutions.arrowline" },
       { name: "DocScanner AI", category: "Productivity Utility", desc: "Intelligent document scanning utility with automated edge detection, color filters, and secure storage management pipelines.", link: "https://play.google.com/store/apps/details?id=com.prinzeesoftware.docscannerai" },
       { name: "Ludo Rise", category: "Multiplayer Board Game", desc: "Synchronized modern multi-player board game featuring real-time connectivity states and smooth performance architecture.", link: "https://play.google.com/store/apps/details?id=com.prinzeesoftware.ludorise" },
       { name: "Jelly Kingdom", category: "Casual Arcade Game", desc: "Addictive matching puzzle mechanics built with cross-device frame optimization, game audio sync, and cloud level databases.", link: "https://play.google.com/store/apps/details?id=com.prinzeesoftware.jellykingdom" },
@@ -226,14 +225,11 @@
       { name: "Jewel Kingdom", category: "Puzzle Matrix", desc: "Stunning jewel collection gameplay setup displaying rich color systems and competitive leaderboard layouts.", link: "https://play.google.com/store/apps/details?id=com.prinzeesoftware.jewelkingdom" }
     ];
 
-    // Initialization and dynamic binding setups
     window.addEventListener('DOMContentLoaded', () => {
-      // Setup minimal sub-links footer list
       document.getElementById('footer-service-links').innerHTML = systemServices.slice(0, 5).map(s => `
         <li><span class="hover:text-white transition cursor-pointer" onclick="go('services')">${s.name}</span></li>
       `).join('');
 
-      // Setup drop-down list variables inside modal window frame
       document.getElementById('modal-service-dropdown').innerHTML = systemServices.map(s => `
         <option value="${s.id}">${s.name}</option>
       `).join('');
@@ -246,7 +242,6 @@
       render();
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Manage CSS styling indicator parameters on desktop navigational bar
       ['home', 'services', 'apps'].forEach(p => {
         const buttonEl = document.getElementById(`nav-${p}`);
         if(buttonEl) {
@@ -303,14 +298,12 @@
       closeInquiryModal();
     }
 
-    // WEB APPLICATION ROUTE ENGINE RENDER VIEWS
     function render() {
       const appMain = document.getElementById("app");
       
       if(pageRoute === "home") {
         appMain.innerHTML = `
           <div class="space-y-16 py-4 animate-fade">
-            <!-- HERO BLOCK / VALUE PROPOSITION SECTION -->
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-4 pb-8">
               <div class="md:col-span-7 space-y-5">
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 dark:bg-blue-950/50 dark:text-blue-300">
@@ -332,7 +325,6 @@
                 </div>
               </div>
 
-              <!-- SIMPLIFIED PORTFOLIO METRICS PREVIEW -->
               <div class="md:col-span-5 bg-white border border-slate-200 rounded-xl p-5 shadow-sm dark:bg-slate-900 dark:border-slate-800">
                 <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800 mb-4">
                   <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Operations Snapshot</span>
@@ -342,7 +334,7 @@
                   <div class="p-3 bg-slate-50 rounded-lg dark:bg-slate-950 flex justify-between items-center">
                     <div>
                       <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Play Store Deployments</p>
-                      <h4 class="text-lg font-bold text-slate-900 dark:text-white mt-0.5">6 Active Apps</h4>
+                      <h4 class="text-lg font-bold text-slate-900 dark:text-white mt-0.5">${activeApps.length} Active Apps</h4>
                     </div>
                     <button onclick="go('apps')" class="text-xs text-blue-600 hover:underline">View All</button>
                   </div>
@@ -360,7 +352,6 @@
               </div>
             </div>
 
-            <!-- CORE UTILITIES HIGHLIGHT CONTAINER -->
             <div class="space-y-6 pt-4">
               <div class="flex justify-between items-end border-b border-slate-200 pb-3 dark:border-slate-800">
                 <div>
