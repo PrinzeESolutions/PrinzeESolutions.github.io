@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PrinzeE Solutions</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PrinzeE Solutions | B2B IT Services, Hardware & Mobile Apps</title>
+  <meta name="description" content="PrinzeE Solutions delivers expert IT consultancy, software development, high-performance retail PC hardware components, security camera systems, and custom corporate graphic designs.">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3161680035970782" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0XT8LNQ732"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0XT8LNQ732');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-50">
-<nav class="bg-white border-b p-4 flex gap-4">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="apps.html">Apps</a>
-<a href="blog.html">Blog</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-</nav>
-<main class="max-w-6xl mx-auto p-6">
-<section id="view-home" class="page-view active-view space-y-16 py-4">
+<body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen flex flex-col justify-between">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="PrinzeE Solutions Logo" class="w-9 h-9 object-contain shrink-0">
+        <div>
+          <h1 class="font-bold text-lg tracking-tight leading-tight text-slate-900">PrinzeE Solutions</h1>
+          <p class="text-[11px] text-slate-500 font-medium tracking-wide uppercase">IT Services & Apps</p>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-2 text-sm font-medium text-slate-600">
+        <a href="index.html" class="px-4 py-2 text-blue-600 font-semibold border-b-2 border-blue-600">Home</a>
+        <a href="services.html" class="px-4 py-2 hover:text-blue-600">Services</a>
+        <a href="apps.html" class="px-4 py-2 hover:text-blue-600">Our Apps</a>
+        <a href="blog.html" class="px-4 py-2 hover:text-blue-600">Blog</a>
+        <a href="about.html" class="px-4 py-2 hover:text-blue-600">About</a>
+        <a href="contact.html" class="px-4 py-2 hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 flex-grow w-full">
+    <section class="space-y-16 py-4">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-4 pb-8">
         <div class="md:col-span-7 space-y-5">
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700">
@@ -30,15 +54,10 @@
             PrinzeE Solutions offers robust corporate software development, engaging game engines, target metrics optimization dashboards, and scalable infrastructure support maps.
           </p>
           <div class="flex flex-wrap items-center gap-3 pt-2">
-            <button onclick="go('services')" class="px-5 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition text-xs shadow-md shadow-blue-600/10 uppercase tracking-wider">
-              Explore Our Services
-            </button>
-            <button onclick="go('contact')" class="px-5 py-3 bg-white border border-slate-200 font-semibold rounded-lg text-slate-700 hover:bg-slate-50 text-xs transition uppercase tracking-wider">
-              Get Free Consultancy
-            </button>
+            <a href="services.html" class="px-5 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition text-xs shadow-md shadow-blue-600/10 uppercase tracking-wider">Explore Our Services</a>
+            <a href="contact.html" class="px-5 py-3 bg-white border border-slate-200 font-semibold rounded-lg text-slate-700 hover:bg-slate-50 text-xs transition uppercase tracking-wider">Get Free Consultancy</a>
           </div>
         </div>
-
         <div class="md:col-span-5 bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
           <div class="flex justify-between items-center pb-3 border-b border-slate-100 mb-4">
             <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Operations Snapshot</span>
@@ -50,7 +69,7 @@
                 <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Play Store Deployments</p>
                 <h4 class="text-lg font-bold text-slate-900 mt-0.5">7 Active Apps</h4>
               </div>
-              <button onclick="go('apps')" class="text-xs text-blue-600 hover:underline">View All</button>
+              <a href="apps.html" class="text-xs text-blue-600 hover:underline">View All</a>
             </div>
             <div class="grid grid-cols-2 gap-3 text-center">
               <div class="p-3 bg-slate-50 rounded-lg">
@@ -66,6 +85,10 @@
         </div>
       </div>
     </section>
-</main>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 p-6 text-center text-xs">
+    <p>© 2026 PrinzeE Solutions. All professional parameters maintained. | <a href="privacy.html" class="underline">Privacy Policy</a></p>
+  </footer>
 </body>
 </html>
