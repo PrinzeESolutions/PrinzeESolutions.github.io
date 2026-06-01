@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PrinzeE Solutions</title>
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Applications | PrinzeE Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-50">
-<nav class="bg-white border-b p-4 flex gap-4">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="apps.html">Apps</a>
-<a href="blog.html">Blog</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy</a>
-</nav>
-<main class="max-w-6xl mx-auto p-6">
-<section id="view-apps" class="page-view space-y-10 py-4">
-      <!-- Embedded appbanner.png layout asset directly -->
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+  <header class="bg-white border-b border-slate-200 p-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="font-bold text-lg text-slate-900">PrinzeE Solutions</a>
+      <nav class="flex gap-4 text-sm font-medium text-slate-600">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="apps.html" class="text-blue-600 font-semibold">Our Apps</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 flex-grow w-full">
+    <section class="space-y-10 py-4">
       <div class="w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200 bg-white">
         <img src="appbanner.png" alt="PrinzeE Software Developer Showcase Banner" class="w-full h-auto object-cover block">
       </div>
-
       <div class="border-b border-slate-200 pb-2">
         <h3 class="text-xl font-bold text-slate-900">Live Application Registry</h3>
       </div>
-      <div id="apps-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="bg-white border border-slate-200 p-5 rounded-lg flex flex-col justify-between shadow-xs">
+          <div class="space-y-2">
+            <span class="text-[9px] font-bold uppercase bg-slate-100 text-slate-500 px-2 py-0.5 rounded">Arcade Skill Game</span>
+            <h4 class="font-bold text-lg text-slate-900">ArrowLine</h4>
+            <p class="text-slate-500 text-xs leading-relaxed">An engaging arcade-style precision game testing timing and reflex accuracy with smooth controls and minimal interfaces.</p>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.prinzeesolutions.arrowline" target="_blank" class="mt-4 text-xs font-bold text-blue-600 hover:underline">View on App Store &rarr;</a>
+        </div>
+        <div class="bg-white border border-slate-200 p-5 rounded-lg flex flex-col justify-between shadow-xs">
+          <div class="space-y-2">
+            <span class="text-[9px] font-bold uppercase bg-slate-100 text-slate-500 px-2 py-0.5 rounded">Casual Arcade Game</span>
+            <h4 class="font-bold text-lg text-slate-900">Jelly Kingdom</h4>
+            <p class="text-slate-500 text-xs leading-relaxed">Addictive matching puzzle mechanics built with cross-device frame optimization, game audio sync, and cloud level databases.</p>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.prinzeesoftware.jellykingdom" target="_blank" class="mt-4 text-xs font-bold text-blue-600 hover:underline">View on App Store &rarr;</a>
+        </div>
+      </div>
     </section>
-</main>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 p-6 text-center text-xs">
+    <p>© 2026 PrinzeE Solutions.</p>
+  </footer>
 </body>
 </html>
